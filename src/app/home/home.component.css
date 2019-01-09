@@ -3,7 +3,7 @@
     padding: 0px;
     border: 1px solid #bababa;
     border:1;
-    width:320px;
+    width:820px;
     background-color: white;
 }
 .inputsearchbox
@@ -11,7 +11,7 @@
     padding: 5px;
     border: 1px solid #bababa;
     border:0 white;
-    width:200px;
+    width:800px;
 }
 input:focus
 { 
@@ -19,7 +19,7 @@ input:focus
     padding: 5px;
     border: 1px solid #bababa;
     border:0 white;
-    width:300px;
+    width:800px;
 }
 .ui-g{
     text-align:left;

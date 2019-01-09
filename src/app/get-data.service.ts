@@ -13,7 +13,7 @@ export class GetDataService {
   constructor(private http: HttpClient) { }
 
   getJson(){
-    this.http.post(this.url, {
+   this.http.post(this.url, {
       "_source": {
                 "includes": ["file.filename", "file.url", "_score" ]
             },
@@ -42,6 +42,6 @@ export class GetDataService {
         
       }
      
-    )
+    ) 
   }
 }

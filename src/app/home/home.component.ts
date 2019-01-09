@@ -69,6 +69,7 @@ export class HomeComponent implements OnInit {
     .subscribe(
       (data) => {
         this.link = data['hits']['hits'];
+        console.log(this.link);
          
         }
         

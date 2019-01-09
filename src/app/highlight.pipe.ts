@@ -21,7 +21,13 @@ export class HighlightPipe implements PipeTransform {
 
     const replacedValue = value.replace(re, "<b>" + match[0] + "</b>");
     return this.sanitizer.bypassSecurityTrustHtml(replacedValue);*/
-    return search ? text.replace(new RegExp(search, 'i'), `<span class="highlight">${search}</span>`) : text;
+    var pattern = search.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    pattern = pattern.split(' ').filter((t) => {
+      return t.length > 0;
+    }).join('|');
+    var regex = new RegExp(pattern, 'gi');
+
+    return search ? text.replace(regex, (match) => `<span class="highlight">${match}</span>`) : text;
   }
 
 }
