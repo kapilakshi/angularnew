@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+html,body{
+    background-color: #F5F5F5;
+}
+body .ui-dataview .ui-dataview-header
+{
+    border: 1px solid  #F5F5F5 !important;
+    margin-left:0px;
+}
+body .ui-dataview .ui-dataview-content
+{
+    border: 1px solid white !important;
+}
+.ui-helper-clearfix
+{
+    margin-left:0px;
+}

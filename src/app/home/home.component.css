@@ -1,0 +1,143 @@
+.searchbox
+{
+    padding: 0px;
+    border: 1px solid #bababa;
+    border:1;
+    width:320px;
+    background-color: white;
+}
+.inputsearchbox
+{
+    padding: 5px;
+    border: 1px solid #bababa;
+    border:0 white;
+    width:200px;
+}
+input:focus
+{ 
+    outline: none !important;
+    padding: 5px;
+    border: 1px solid #bababa;
+    border:0 white;
+    width:300px;
+}
+.ui-g{
+    text-align:left;
+    vertical-align: top;
+    margin-left:0px;
+  
+}
+
+body{
+    
+    font-family: arial,sans-serif;
+    height:100%;
+    margin-bottom: 0px;
+   
+}
+.ui-helper-clearfix
+{
+   
+    margin:0px;
+    padding:0px;
+    vertical-align: top;
+}
+img{
+    float:right;
+    margin-right:1px;
+    padding-right: 0px;
+    margin-left:0px;
+    padding-left: 0px;
+}
+.info{
+    color:#545454;
+}
+.datatable
+{
+    overflow-y:auto;
+    text-align: left;
+}
+
+.listItem
+{
+    overflow-y:auto;
+}
+
+
+.text
+{
+    font-weight: bold;
+    color:#545454;
+    padding-left:20px;
+    padding-right: 20px;
+    margin-bottom: 0px;
+}
+.score
+{
+    font-weight: bold;
+    color:#545454;
+    padding-left:16px;
+    padding-right:4px;
+    margin-bottom: 0px;
+}
+html,body{
+    background-color: #F5F5F5;
+}
+.scoreinfo
+{
+     color:#F79646;
+}
+.info{
+    margin-top:0px;
+    padding-left:20px;
+    padding-right: 20px;
+}
+a{
+    text-decoration:none;
+    color:#545454;
+}
+a:hover {
+    text-decoration: underline;
+    color:#164579;
+}
+.pi-search
+{
+    color:grey;
+}
+hr{
+    border-top: 1px solid #ccc;
+    margin:20px;
+}
+.searchbox
+{
+    background-color: white;
+    text-align: left;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.hiddentext{
+    font-weight: bold;
+    color:#F79646;
+    padding-left:20px;
+    padding-right:4px;
+    margin-bottom: 0px;
+    
+}
+.hiddenoutput
+{
+    font-style: italic; 
+    font-weight: bold; 
+}
+.searcharea{
+    text-align: left;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.logo
+{
+    text-align: right;
+    margin-right:0px;
+    padding-right: 0px;
+    margin-left:0px;
+    padding-left: 0px;
+}

@@ -1,0 +1,29 @@
+ <p-dataView #dv [value]="link" filterBy="query"  styleClass="borderless">
+        <p-header>
+                <div class="ui-helper-clearfix">
+                    <div class="ui-g">
+                        <div class="ui-g-12 filter-container">
+                            <div style="position:relative"><div class="ui-g-2 logo"><img src="/assets/images/Interpretlogo.png" height="28px" width="170px"/></div>
+                                <div class="ui-g-10 searcharea">
+                               <div class="pi pi-search searchbox"> <input class="inputsearchbox" type="search" [(ngModel)]="nameinput" pInputText placeholder="Search.."  (keydown.enter)="updateSearch($event)" ></div></div>
+                            </div>
+                        </div>
+                   
+                    </div>
+                </div>
+             <!--   <div *ngIf="show"><span class="hiddentext">Did you Mean:</span><span class="hiddenoutput">{{nameinput}}</span></div>-->
+            </p-header>
+            
+    <ng-template let-x pTemplate="listItem" >
+       <div class="datatable">
+                    <p  class="text"><a href="assets/pdf/{{x._source.file.filename}}" target="_blank">{{x._source.file.filename}}</a></p>
+                    <br/>
+                    <div class="ui-g-3"><span class="score">Score:</span><span class="scoreinfo">{{x._score}}</span></div> <div class="ui-g-9"><p class="info" [innerHTML]="x.highlight.content"></p></div><hr>
+                </div>
+            
+                
+   </ng-template>
+
+   </p-dataView>
+
+
