@@ -1,6 +1,7 @@
+
 .searchbox
 {
-    padding: 0px;
+
     border: 1px solid #bababa;
     border:1;
     width:820px;
@@ -44,7 +45,7 @@ body{
 }
 img{
     float:right;
-    margin-right:1px;
+    margin-right:10px;
     padding-right: 0px;
     margin-left:0px;
     padding-left: 0px;

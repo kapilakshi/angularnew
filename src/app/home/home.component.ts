@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
   
   constructor(private http : HttpClient) { }
   updateSearch(e:any) {
-     this.url = "http://10.11.198.208:9200/investopedia/_doc/_search?pretty";
+    //this.url = "http://10.11.198.208:9200/investopedia/_doc/_search?pretty";
+    this.url = "http://ailab001.incedoinc.com:9200/investopedia/_doc/_search?pre"
     this.name = e.target.value;
     this.searchTerm = e.target.value;
     console.log(e.target.value);
