@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HighlightPipe } from './highlight.pipe';
 import { FormsModule } from '@angular/forms';
+import {APP_BASE_HREF} from '@angular/common';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: environment.path}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
