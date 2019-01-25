@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../get-data.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,27 +17,31 @@ export class HomeComponent implements OnInit {
   link:any=[];
   found:boolean;
   url:string;
+  baseUrl = environment.baseUrl;
+  path= environment.path;
   
   constructor(private http : HttpClient) { }
   updateSearch(e:any) {
     //this.url = "http://10.11.198.208:9200/investopedia/_doc/_search?pretty";
-    this.url = "http://ailab001.incedoinc.com:9200/investopedia/_doc/_search?pre"
+   // this.url = "http://ailab001.incedoinc.com:9200/investopedia/_doc/_search?pretty"
+    this.url = this.baseUrl ;
     this.name = e.target.value;
     this.searchTerm = e.target.value;
     console.log(e.target.value);
-    this.http.post(this.url, {
+    this.http.post(this.url,{
       "_source": {
-                  "includes": ["file.filename", "file.url", "_score" ]
+                  "includes": ["file.filename", "file.url", "_score","url" ]
               },
         "query": {
           "bool": {
             "must": [
               {
                 "multi_match": {
-            "fields":  [ "content"],
+            "fields":  ["title","description","sub_headings", "content"],
             "query":     this.name,
               "analyzer" : "synonym",
               "fuzziness": "auto",
+              "prefix_length": 3,
             "slop": 5
               }
               }
@@ -43,10 +49,11 @@ export class HomeComponent implements OnInit {
             "should": [
               {
                 "multi_match": {
-            "fields":  [ "content"],
+            "fields":  [ "title^2","description^4","sub_headings^3","content"],
             "query":     this.name,
               "analyzer" : "no_synonym",
               "fuzziness": "auto",
+              "prefix_length": 3,
             "slop": 5
               }
               }
@@ -56,15 +63,14 @@ export class HomeComponent implements OnInit {
         },
         "highlight": {
             "order" : "score",
-            "pre_tags" : ["<mark><b>"],
-            "post_tags" : ["</b></mark>"],
+            "pre_tags" : ["<mark>"],
+            "post_tags" : ["</mark>"],
             "fragment_size" : 150,
               "fields" : {
                   "content" : {}
               }
           }
       }
-      
       
     )
     .subscribe(

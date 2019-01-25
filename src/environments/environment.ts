@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://10.11.198.208:9200/investopedia/_doc/_search?pretty'
+  baseUrl: 'http://10.11.198.208:9200/investopedia/_doc/_search?pretty',
+  path: '/'
 };
 
 /*

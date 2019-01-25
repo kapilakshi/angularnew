@@ -3,7 +3,7 @@
                 <div class="ui-helper-clearfix">
                     <div class="ui-g">
                         <div class="ui-g-12 filter-container">
-                            <div style="position:relative"><div class="ui-g-2 logo"><img src="/incedo-ameritrade-demo/grapherUI/assets/images/Interpretlogo.png" height="28px" width="150px"/></div>
+                            <div style="position:relative"><div class="ui-g-2 logo"><img src="{{path}}assets/images/Interpretlogo.png" height="28px" width="150px"/></div>
                                 <div class="ui-g-10 searcharea">
                                <div class="pi pi-search searchbox"> <input class="inputsearchbox" type="search" [(ngModel)]="nameinput" pInputText placeholder="Search.."  (keydown.enter)="updateSearch($event)" ></div></div>
                             </div>
@@ -16,7 +16,7 @@
             
     <ng-template let-x pTemplate="listItem" >
        <div class="datatable">
-                    <p  class="text"><a href="/incedo-ameritrade-demo/grapherUI/assets/pdf/{{x._source.file.filename}}" target="_blank">{{x._source.file.filename}}</a></p>
+                    <p  class="text"><a href="{{x._source.url}}" target="_blank">{{x._source.file.filename | slice: 0:-4}}</a></p>
                     <br/>
                     <div class="ui-g-3"><span class="score">Score:</span><span class="scoreinfo">{{x._score}}</span></div> <div class="ui-g-9" ><p class="info"  [innerHTML]="x.highlight.content"></p></div><hr>
                 </div>
