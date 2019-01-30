@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
             "should": [
               {
                 "multi_match": {
-            "fields":  [ "title^2","description^4","sub_headings^3","content"],
+            "fields":  [ "title^3","description^4","sub_headings^2","content"],
             "query":     this.name,
               "analyzer" : "no_synonym",
               "fuzziness": "auto",
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
             "order" : "score",
             "pre_tags" : ["<mark>"],
             "post_tags" : ["</mark>"],
-            "fragment_size" : 150,
+            "fragment_size" : 180,
               "fields" : {
                   "content" : {}
               }
