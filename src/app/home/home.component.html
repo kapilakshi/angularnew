@@ -1,15 +1,18 @@
- <p-dataView #dv [value]="link" filterBy="query"  styleClass="borderless">
+ <p-dataView #dv [value]="link" filterBy="query"  styleClass="borderless" [paginator]="true" paginatorPosition="both" [rows]="10">
         <p-header>
                 <div class="ui-helper-clearfix">
+                 
                     <div class="ui-g">
-                        <div class="ui-g-12 filter-container">
-                            <div style="position:relative"><div class="ui-g-2 logo"><img src="{{path}}assets/images/Interpretlogo.png" height="28px" width="150px"/></div>
-                                <div class="ui-g-10 searcharea">
-                               <div class="pi pi-search searchbox"> <input class="inputsearchbox" type="search" [(ngModel)]="nameinput" pInputText placeholder="Search.."  (keydown.enter)="updateSearch($event)" ></div></div>
-                            </div>
+                       
+                        <div class="ui-g-12 filter-container" style="position:relative"><div class="ui-g-2"><img src="{{path}}assets/images/interpret.png" height="40px" width="180px"/></div>
+                            <div class="ui-g-8">
+                           <div class="pi pi-search searchbox ui-g-8"> <input class="inputsearchbox" type="search" [(ngModel)]="nameinput" pInputText placeholder="Search.." (keydown.enter)="updateSearch($event)"></div>
                         </div>
-                   
-                    </div>
+                        <div class="ui-g-2"><img src="{{path}}assets/images/smart.png" height="50px" width="170px"/></div>
+                        </div>
+                    
+                        
+                </div>
                 </div>
              <!--   <div *ngIf="show"><span class="hiddentext">Did you Mean:</span><span class="hiddenoutput">{{nameinput}}</span></div>-->
             </p-header>

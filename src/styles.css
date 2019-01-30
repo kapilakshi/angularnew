@@ -7,11 +7,11 @@ body .ui-dataview .ui-dataview-header
     border: 1px solid  #F5F5F5 !important;
     margin-left:0px;
 }
-body .ui-dataview .ui-dataview-content
+/*body .ui-dataview .ui-dataview-content
 {
     border: 1px solid white !important;
 }
 .ui-helper-clearfix
 {
     margin-left:0px;
-}
+}*/
