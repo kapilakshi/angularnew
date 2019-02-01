@@ -32,55 +32,47 @@ export class HomeComponent implements OnInit {
     this.http.post(this.url,{
       "size":200,
       "_source": {
-        "includes": ["file.filename", "file.url", "_score","url" ]
-    },
-"query": {
-"bool": {
-  "must": [
-    {
-      "multi_match": {
-  "fields":  ["title","description","sub_headings^2", "content"],
-  "query":     this.name,
-    "analyzer" : "synonym",
-    "fuzziness": "auto",
-    "prefix_length": 3,
-  "slop": 5
-    }
-    }
-  ],
-  "should": [
-    {
-      "multi_match": {
-  "fields":  [ "title^3","description^4","sub_headings^2","content"],
-  "query":     this.name,
-    "analyzer" : "no_synonym",
-    "fuzziness": "auto",
-    "prefix_length": 3,
-  "slop": 5
-    }
-    },
-      {
-      "multi_match": {
-  "fields":  [ "title^4","description^4","sub_headings^5","content"],
-  "query":     this.name,
-  "type" : "phrase",
-    "analyzer" : "no_synonym",
-  "slop": 10
-    }
-    }
-  ]
-
-}
-},
-"highlight": {
-  "order" : "score",
-  "pre_tags" : ["<mark>"],
-  "post_tags" : ["</mark>"],
-  "fragment_size" : 180,
-    "fields" : {
-        "content" : {}
-    }
-}
+        
+                  "includes": ["file.filename", "file.url", "_score","url" ]
+              },
+        "query": {
+          "bool": {
+            "must": [
+              {
+                "multi_match": {
+            "fields":  ["title","description","sub_headings", "content"],
+            "query":     this.name,
+              "analyzer" : "synonym",
+              "fuzziness": "auto",
+              "prefix_length": 3,
+            "slop": 5
+              }
+              }
+            ],
+            "should": [
+              {
+                "multi_match": {
+            "fields":  [ "title^3","description^4","sub_headings^2","content"],
+            "query":     this.name,
+              "analyzer" : "no_synonym",
+              "fuzziness": "auto",
+              "prefix_length": 3,
+            "slop": 5
+              }
+              }
+            ]
+      
+          }
+        },
+        "highlight": {
+            "order" : "score",
+            "pre_tags" : ["<mark>"],
+            "post_tags" : ["</mark>"],
+            "fragment_size" : 180,
+              "fields" : {
+                  "content" : {}
+              }
+          }
       }
       
     )
