@@ -29,7 +29,9 @@ export class HomeComponent implements OnInit {
     this.searchTerm = e.target.value;
     console.log(e.target.value);
     this.http.post(this.url,{
+      "size":200,
       "_source": {
+        
                   "includes": ["file.filename", "file.url", "_score","url" ]
               },
         "query": {
