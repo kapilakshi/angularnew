@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
             "should": [
               {
                 "multi_match": {
-            "fields":  [ "title^3","description^4","sub_headings^2","content"],
+            "fields":  [ "title^3","description^4","sub_headings^4","content"],
             "query":     this.name,
               "analyzer" : "no_synonym",
               "fuzziness": "auto",
