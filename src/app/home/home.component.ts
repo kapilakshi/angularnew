@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
     this.http.post(this.url,{
       "size":200,
       "_source": {
-        
                   "includes": ["file.filename", "file.url", "_score","url" ]
               },
         "query": {
@@ -41,7 +40,7 @@ export class HomeComponent implements OnInit {
               {
                 "multi_match": {
             "fields":  ["title","description","sub_headings", "content"],
-            "query":     this.name,
+            "query":     "How risky is options trading?",
               "analyzer" : "synonym",
               "fuzziness": "auto",
               "prefix_length": 3,
@@ -52,12 +51,21 @@ export class HomeComponent implements OnInit {
             "should": [
               {
                 "multi_match": {
-            "fields":  [ "title^3","description^4","sub_headings^4","content"],
-            "query":     this.name,
+            "fields":  [ "title^3","description^3","sub_headings^4","content"],
+            "query":     "How risky is options trading?",
               "analyzer" : "no_synonym",
               "fuzziness": "auto",
               "prefix_length": 3,
             "slop": 5
+              }
+              },
+                {
+                "multi_match": {
+            "fields":  [ "title","description^2","sub_headings^2","content"],
+            "query":     "How risky is options trading?",
+            "type" : "phrase",
+              "analyzer" : "no_synonym",
+            "slop": 10
               }
               }
             ]
@@ -74,6 +82,7 @@ export class HomeComponent implements OnInit {
               }
           }
       }
+
       
     )
     .subscribe(
