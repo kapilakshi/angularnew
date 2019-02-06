@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
               {
                 "multi_match": {
             "fields":  ["title","description","sub_headings", "content"],
-            "query":     "How risky is options trading?",
+            "query":     this.name,
               "analyzer" : "synonym",
               "fuzziness": "auto",
               "prefix_length": 3,
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
               {
                 "multi_match": {
             "fields":  [ "title^3","description^3","sub_headings^4","content"],
-            "query":     "How risky is options trading?",
+            "query":     this.name,
               "analyzer" : "no_synonym",
               "fuzziness": "auto",
               "prefix_length": 3,
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
                 {
                 "multi_match": {
             "fields":  [ "title","description^2","sub_headings^2","content"],
-            "query":     "How risky is options trading?",
+            "query":     this.name,
             "type" : "phrase",
               "analyzer" : "no_synonym",
             "slop": 10
