@@ -19,8 +19,16 @@ export class HomeComponent implements OnInit {
   url:string;
   baseUrl = environment.baseUrl;
   path= environment.path;
+  public kam: number=0;
   
   constructor(private http : HttpClient) { }
+
+  lok(eventData)
+  {
+   this.kam=eventData.first;
+   console.log(eventData.first);
+
+  }
   updateSearch(e:any) {
     this.link = null;
     //this.url = "http://10.11.198.208:9200/investopedia/_doc/_search?pretty";
@@ -136,6 +144,7 @@ export class HomeComponent implements OnInit {
     )
     .subscribe(
       (data) => {
+        this.kam = 0;
         this.link = data['hits']['hits'];
         console.log(this.link);
          

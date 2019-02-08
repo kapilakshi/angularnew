@@ -1,4 +1,4 @@
- <p-dataView #dv [value]="link" filterBy="query"  styleClass="borderless" [paginator]="true" paginatorPosition="both" [rows]="10" >
+ <p-dataView #dv [value]="link" filterBy="query"  styleClass="borderless" [paginator]="true" paginatorPosition="both" [rows]="10" [first]="kam" (onPage)="lok($event)">
         <p-header>
                 <div class="ui-helper-clearfix">
                  
