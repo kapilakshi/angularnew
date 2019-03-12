@@ -122,9 +122,9 @@ export class HomeComponent implements OnInit {
 
             "order" : "score",
 
-            "pre_tags" : ["<mark>"],
+            "pre_tags" : [],
 
-            "post_tags" : ["</mark>"],
+            "post_tags" : [],
 
             "fragment_size" : 180,
 
